@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
-  skip_before_action :authorize, only: [:index]
-  before_action :authorize
+  # skip_before_action :authorize, only: [:index]
+  # before_action :authorize
 
   # GET /articles
   # def index
