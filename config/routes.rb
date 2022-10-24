@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  resources :articles
   resources :bookmarks
   resources :categories
   resources :admins
