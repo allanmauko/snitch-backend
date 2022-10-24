@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_many :Articles
+    # has_many :Articles
     has_secure_password
 
     validates :password, presence: true
