@@ -7,5 +7,6 @@ class Article < ApplicationRecord
     has_many :users, through: :likes
 
     #validations
-    validates :bio, length: { minimum: 20 }
+    validates :value, length: { minimum: 20 }
+    validates :title, presence: { message: "title must be given please" }
 end
