@@ -1,10 +1,9 @@
 class UsersController < ApplicationController
-  # before_action :set_user, only: %i[ show update destroy ]
-
+  before_action :set_user, only: %i[show update destroy ]
+  
   # GET /users
   def index
     @users = User.all
-
     render json: @users
   end
 
@@ -20,8 +19,7 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.create(user_params)
-
+    @user = User.create!(user_params)
     if @user.valid?
       session[:user_id] = @user.id
       render json: @user, status: :created, location: @user
@@ -50,8 +48,8 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+
     def user_params
-      params.require(:user).permit(:username, :email, :password_digest)
+      params.permit(:username, :email, :password_digest)
     end
 end
