@@ -5,4 +5,7 @@ class Article < ApplicationRecord
     has_many :comments
     has_many :likes
     has_many :users, through: :likes
+
+    #validations
+    validates :bio, length: { minimum: 20 }
 end
