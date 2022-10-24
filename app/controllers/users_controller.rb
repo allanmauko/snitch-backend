@@ -10,14 +10,20 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    render json: @user
+    @user = User.find_by(id:session[:user_id])
+    if @user
+    render json: @user, status: :created
+    else
+    render json: @user.errors, status: :unprocessable_entity
+    end
   end
 
   # POST /users
   def create
-    @user = User.new(user_params)
+    @user = User.create(user_params)
 
-    if @user.save
+    if @user.valid?
+      session[:user_id] = @user.id
       render json: @user, status: :created, location: @user
     else
       render json: @user.errors, status: :unprocessable_entity
