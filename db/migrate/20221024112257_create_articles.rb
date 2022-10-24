@@ -1,0 +1,12 @@
+class CreateArticles < ActiveRecord::Migration[7.0]
+  def change
+    create_table :articles do |t|
+      t.string :title
+      t.string :value
+      t.integer :number_of_likes
+      t.string :image_url
+
+      t.timestamps
+    end
+  end
+end
