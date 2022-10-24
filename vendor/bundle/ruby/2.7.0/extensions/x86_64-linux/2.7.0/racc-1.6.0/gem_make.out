@@ -1,0 +1,17 @@
+current directory: /home/george/Desktop/Development/Assgnments/Phase-5-project/Snitch/snitch-backend/vendor/bundle/ruby/2.7.0/gems/racc-1.6.0/ext/racc/cparse
+/home/george/.rbenv/versions/2.7.4/bin/ruby -I /home/george/.rbenv/versions/2.7.4/lib/ruby/site_ruby/2.7.0 extconf.rb
+checking for rb_block_call()... yes
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /home/george/Desktop/Development/Assgnments/Phase-5-project/Snitch/snitch-backend/vendor/bundle/ruby/2.7.0/gems/racc-1.6.0/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20221024-49245-13rc08y sitelibdir\=./.gem.20221024-49245-13rc08y clean
+
+current directory: /home/george/Desktop/Development/Assgnments/Phase-5-project/Snitch/snitch-backend/vendor/bundle/ruby/2.7.0/gems/racc-1.6.0/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20221024-49245-13rc08y sitelibdir\=./.gem.20221024-49245-13rc08y
+compiling cparse.c
+linking shared-object racc/cparse.so
+
+current directory: /home/george/Desktop/Development/Assgnments/Phase-5-project/Snitch/snitch-backend/vendor/bundle/ruby/2.7.0/gems/racc-1.6.0/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20221024-49245-13rc08y sitelibdir\=./.gem.20221024-49245-13rc08y install
+/usr/bin/install -c -m 0755 cparse.so ./.gem.20221024-49245-13rc08y/racc
