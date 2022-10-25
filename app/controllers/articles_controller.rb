@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
   #   render json: @article
   # end
   def show
-    @articles = Article.find(id: params[:id])
+    @articles = Article.find(params[:id])
     render json: @articles
   end
 
