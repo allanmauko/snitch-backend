@@ -1,6 +1,6 @@
 class Category < ApplicationRecord
   belongs_to :user
-  belongs_to :article
+  has_many :article
 
   validates :name, presence: true
 end
