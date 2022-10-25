@@ -1,5 +1,5 @@
 class AdminsController < ApplicationController
-  before_action :set_admin, only: %i[ show update destroy ]
+  # before_action :set_admin, only: %i[ show update destroy ]
 
   # GET /admins
   def index
