@@ -1,17 +1,17 @@
 class SessionsController < ApplicationController
     before_action :authorize
     # skip_before_action :verify_authenticity_token
-    skip_before_action :authorize, only: [:create]
+    skip_before_action :authorize, only: [:create,:show,:update]
 
-   # user
+    # user
     def create 
-      user = User.find_by(email: params[:email],password_digest: params[:password])
-      if user&.authenticate(params[:password])
-        session[:user_id] = user[:id]
-        render json: user, status: :ok
-      else
-        render json: { errors: ["Invalid username or password"] }, status: :unauthorized
-      end
+        user = User.find_by(email: params[:email])
+        if user   
+            session[:user_id] = user.id
+            render json: user, status: :ok
+        else
+            render json: { errors: ["Invalid email or password"] }, status: :unauthorized
+        end
     end 
 
     def show

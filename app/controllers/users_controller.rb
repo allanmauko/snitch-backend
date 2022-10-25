@@ -19,8 +19,9 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.create!(user_params)
-    if @user.valid?
+    @user = User.new(user_params)
+    if @user.save
+    # if @user.valid?
       session[:user_id] = @user.id
       render json: @user, status: :created, location: @user
     else
@@ -50,6 +51,6 @@ class UsersController < ApplicationController
 
 
     def user_params
-      params.permit(:username, :email, :password_digest)
+      params.permit(:username, :email, :password)
     end
 end
