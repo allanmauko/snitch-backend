@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
   #   else
   #     render json: @article.errors, status: :unprocessable_entity
   #   end
-  # end
+  # end 
 
   def create
     @articles = Article.create(user_id: session[:user_id])
