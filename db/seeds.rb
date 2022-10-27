@@ -27,17 +27,17 @@ Article.create(title:"Don’t Trash Your Old Phone—Give It a Second Life",valu
    Bookmark.create(article_id: 4, user_id: 4)
    Bookmark.create(article_id: 5, user_id: 5)
 
-   Category.create!(name:"Inspirational")
-   Category.create!(name:"Political")
-   Category.create!(name:"Technology")
-   Category.create!(name:"Finance")
-   Category.create!(name:"Lifestyle")
+   Category.create!(name:"Inspirational", user_id:1)
+   Category.create!(name:"Political", user_id:2)
+   Category.create!(name:"Technology", user_id:3)
+   Category.create!(name:"Finance", user_id:4)
+   Category.create!(name:"Lifestyle", user_id:5)
 
-   User.create(username:"allanM", email:"test12@gmail.com", password:"12345678")
-   User.create(username:"allanM1", email:"test1@gmail.com", password:"12345679")
-   User.create(username:"allanM2", email:"test2@gmail.com", password:"345678")
-   User.create(username:"allanM3", email:"test3@gmail.com", password:"0987654")
-   User.create(username:"allanM4", email:"test4@gmail.com", password:"23456789")
+   User.create!(username:"allanM", email:"test12@gmail.com", password:"12345678")
+   User.create!(username:"allanM1", email:"test1@gmail.com", password:"12345679")
+   User.create!(username:"allanM2", email:"test2@gmail.com", password:"345678")
+   User.create!(username:"allanM3", email:"test3@gmail.com", password:"0987654")
+   User.create!(username:"allanM4", email:"test4@gmail.com", password:"23456789")
 
    puts "Seeding Admin.."
    admin = Admin.create(username: "admin", email: "admin@gmail.com", role: "admin", password: "admin")

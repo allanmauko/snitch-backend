@@ -1,9 +1,5 @@
 class User < ApplicationRecord
     has_secure_password
-    has_many :categories
-    has_many :articles
-    has_many :bookmarks
-
 
     has_many :articles
 
