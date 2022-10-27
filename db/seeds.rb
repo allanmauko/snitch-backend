@@ -39,6 +39,9 @@ Article.create(title:"Don’t Trash Your Old Phone—Give It a Second Life",valu
    User.create!(username:"allanM3", email:"test3@gmail.com", password:"0987654")
    User.create!(username:"allanM4", email:"test4@gmail.com", password:"23456789")
 
+   puts "Seeding Admin.."
+   admin = Admin.create(username: "admin", email: "admin@gmail.com", role: "admin", password: "admin")
+   puts "Done Seeding Admin"
 
 puts "✅ Done seeding!"
 

@@ -4,6 +4,7 @@
       t.string :username
       t.string :email
       t.string :password_digest
+      t.string :role
 
       t.timestamps
     end
