@@ -66,7 +66,7 @@ class ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.permit(:title, :value, :number_of_likes, :image_url)
+      params.require(:article).permit(:title, :value, :number_of_likes, :image_url)
     end
     def authorize
       return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :user_id

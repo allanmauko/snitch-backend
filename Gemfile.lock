@@ -185,7 +185,6 @@ DEPENDENCIES
   bcrypt
   byebug
   debug
-  
   pg (~> 1.4, >= 1.4.3)
   puma (~> 5.0)
   rack-cors
