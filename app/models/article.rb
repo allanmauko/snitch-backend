@@ -8,4 +8,4 @@ class Article < ApplicationRecord
     #validations
     validates :value, length: { minimum: 20 }
     validates :title, presence: { message: "title must be given please" }
-endc
+end
