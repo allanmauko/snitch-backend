@@ -1,22 +1,11 @@
 class ArticlesController < ApplicationController
-  # skip_before_action :authorize, only: [:index]
-  # before_action :authorize
-
-  # GET /articles
-  # def index
-  #   @articles = Article.all
-  #   render json: @articles
-  # end
+  skip_before_action :verify_authenticity_token
 
   def index
     @articles = Article.all
     render json: @articles
   end
 
-  # GET /articles/1
-  # def show
-  #   render json: @article
-  # end
   def show
     @articles = Article.find(params[:id])
     render json: @articles
@@ -31,11 +20,15 @@ class ArticlesController < ApplicationController
   #     render json: @article.errors, status: :unprocessable_entity
   #   end
   # end
-
   def create
-    @articles = Article.create(user_id: session[:user_id])
-    render json: @articles, status: :created
+    article = Article.create!(article_params)
+    render json: article, status: :created
   end
+
+  # def create
+  #   @articles = Article.create(user_id: session[:user_id])
+  #   render json: @articles, status: :created
+  # end
 
   # PATCH/PUT /articles/1
   # def update
