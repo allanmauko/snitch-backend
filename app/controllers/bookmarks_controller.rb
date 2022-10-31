@@ -39,13 +39,13 @@ class BookmarksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_bookmark
-      @bookmark = Bookmark.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_bookmark
+    @bookmark = Bookmark.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def bookmark_params
-      params.fetch(:bookmark, {})
-    end
+  # Only allow a list of trusted parameters through.
+  def bookmark_params
+    params.fetch(:bookmark, {})
+  end
 end
