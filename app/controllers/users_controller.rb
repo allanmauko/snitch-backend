@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   wrap_parameters format:[]
   skip_before_action :verify_authenticity_token
 
-  
+
   # GET /users
   def index
     @users = User.all
@@ -13,9 +13,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(id:session[:user_id])
     if @user
-    render json: @user, status: :created
+      render json: @user, status: :created
     else
-    render json: @user.errors, status: :unprocessable_entity
+      render json: @user.errors, status: :unprocessable_entity
     end
   end
 
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-    # if @user.valid?
+      # if @user.valid?
       session[:user_id] = @user.id
       render json: @user, status: :created, location: @user
     else
@@ -46,13 +46,13 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user
+    @user = User.find(params[:id])
+  end
 
 
-    def user_params
-      params.permit(:username, :email, :password)
-    end
+  def user_params
+    params.permit(:username, :email, :password)
+  end
 end
