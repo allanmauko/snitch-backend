@@ -10,7 +10,7 @@ class AdminsSessionsController < ApplicationController
       admin = Admin.find_by(email: params[:email])
       if admin
         session[:admin_id] = admin[:id]
-        render json: user, status: :ok
+        render json: admin, status: :ok
       else
         render json: { errors: ["Invalid email or password"] }, status: :unauthorized
       end
@@ -37,6 +37,4 @@ class AdminsSessionsController < ApplicationController
       def authorize
         render json: { errors: ["Not authorized"] }, status: :unauthorized unless session.include? :admin_id
       end
-  
-
 end
