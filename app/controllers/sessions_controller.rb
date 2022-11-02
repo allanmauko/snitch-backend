@@ -32,9 +32,9 @@ class SessionsController < ApplicationController
 
   private
 
-
   def authorize
     render json: { errors: ["Not authorized"] }, status: :unauthorized unless session.include? :user_id
   end
 
 end
+

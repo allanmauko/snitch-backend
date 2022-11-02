@@ -19,8 +19,8 @@ Rails.application.routes.draw do
 
  #ADMINS SESSION DATA
   get "/admin_me", to: "admin#show"
-  post "/admin_login", to: "admin_sessions#create"
-  delete "/admin_logout", to: "admin_sessions#destroy"
+  post "/admin_login", to: "admins_sessions#create"
+  delete "/admin_logout", to: "admins_sessions#destroy"
   post '/admin_signup', to: 'admin#create'
   # root "articles#index"
 end

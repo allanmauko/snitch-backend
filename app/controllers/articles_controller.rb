@@ -47,8 +47,8 @@ class ArticlesController < ApplicationController
 
 
   # DELETE /articles/1
-  def destroy
-    @article.destroy
+  def delete
+    @article.delete
   end
 
   private
