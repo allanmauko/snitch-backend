@@ -1,9 +1,10 @@
 class ApplicationController < ActionController::API
-    before_action :set_csrf_cookie
+    # before_action :set_csrf_cookie
     include ActionController::Cookies
-    include ActionController::RequestForgeryProtection
+    # include ActionController::RequestForgeryProtection
 
-    protect_from_forgery with: :exception
+    # protect_from_forgery with: :exception
+    # protect_from_forgery with: :null_session
 
     def cookie
         "ok"
@@ -11,10 +12,10 @@ class ApplicationController < ActionController::API
 
     private
 
-    def set_csrf_cookie
-        cookies["CSRF-TOKEN"] = {
-          value: form_authenticity_token,
-          domain: :all
-        }
-    end
+    # def set_csrf_cookie
+    #     cookies["CSRF-TOKEN"] = {
+    #       value: form_authenticity_token,
+    #       domain: :all
+    #     }
+    # end
 end

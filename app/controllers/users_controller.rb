@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   wrap_parameters format:[]
-  skip_before_action :verify_authenticity_token
+  # skip_before_action :verify_authenticity_token
 
 
   # GET /users
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      # if @user.valid?
+      #if @user.valid?
       session[:user_id] = @user.id
       render json: @user, status: :created, location: @user
     else

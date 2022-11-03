@@ -1,9 +1,9 @@
 class ArticlesController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  # skip_before_action :verify_authenticity_token
 
   def index
     @articles = Article.all
-    render json: @articles
+    render json: @articles.order("created_at DESC")
   end
 
   def show
